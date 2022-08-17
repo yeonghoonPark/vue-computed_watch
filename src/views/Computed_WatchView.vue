@@ -2,7 +2,7 @@
   <div>
     <h1>Forward direction : {{ message }}</h1>
     <hr />
-    <h1>Reverse direction : {{ reverseMessage() }}</h1>
+    <h1>Reverse direction : {{ reverseMessage }}</h1>
     <p>{{ date }}</p>
   </div>
 </template>
@@ -12,23 +12,23 @@ export default {
   components: {},
   data() {
     return {
-      message: '안세요',
+      message: '안녕하세요',
       date: Date.now(),
     };
   },
-  // computed: {
-  //   reverseMessage: function () {
-  //     return this.message.split('').reverse().join('');
-  //   },
-  // },
+  computed: {
+    reverseMessage: function () {
+      return this.message.split('').reverse().join('');
+    },
+  },
   setup() {},
   created() {},
   mounted() {},
   unmounted() {},
   methods: {
-    reverseMessage: function () {
-      return this.message.split('').reverse().join('');
-    },
+    // reverseMessage: function () {
+    //   return this.message.split('').reverse().join('');
+    // },
   },
 };
 </script>
